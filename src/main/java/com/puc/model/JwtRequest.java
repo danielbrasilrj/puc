@@ -1,4 +1,4 @@
-package com.javainuse.model;
+package com.puc.model;
 
 import java.io.Serializable;
 

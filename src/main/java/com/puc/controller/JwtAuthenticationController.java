@@ -1,9 +1,9 @@
-package com.javainuse.controller;
+package com.puc.controller;
 
-import com.javainuse.config.JwtTokenUtil;
-import com.javainuse.model.JwtRequest;
-import com.javainuse.model.JwtResponse;
-import com.javainuse.service.JwtUserDetailsService;
+import com.puc.config.JwtTokenUtil;
+import com.puc.model.JwtRequest;
+import com.puc.model.JwtResponse;
+import com.puc.service.JwtUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;

@@ -1,4 +1,4 @@
-package com.javainuse.config;
+package com.puc.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -56,12 +56,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity httpSecurity) throws Exception {
 
         httpSecurity.csrf().disable() // We don't need CSRF for this example
-        .authorizeRequests().antMatchers("/").permitAll();
-        /*.authorizeRequests().antMatchers("/authenticate").permitAll() // Dont authenticate this particular request
+        //.authorizeRequests().antMatchers("/").permitAll();
+        .authorizeRequests().antMatchers("/authenticate").permitAll() // Dont authenticate this particular request
         .anyRequest().authenticated() // all other requests need to be authenticated
         .and().exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint)
-        .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS); // make sure we use stateless session. Session won't be used to store user's state.*/
-
+        .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS); // make sure we use stateless session. Session won't be used to store user's state.
         // Add a filter to validate the tokens with every request
         httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
     }

@@ -1,4 +1,4 @@
-package com.javainuse.service;
+package com.puc.service;
 
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -21,8 +21,8 @@ public class JwtUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        if ("javainuse".equals(username)) {
-            return new User("javainuse", "$2a$10$slYQmyNdGzTn7ZLBXBChFOC9f6kFjAqPhccnP6DxlWXx2lPk1C3G6",
+        if ("danielbrasil".equals(username)) {
+            return new User("danielbrasil", "$2a$10$VYMm34nyrls4arVoQdz5j.6zWl5pux4XKI7svXStuaDyy24Rw5Drm",
                     new ArrayList<>());
         } else {
             throw new UsernameNotFoundException("User not found with username: " + username);
